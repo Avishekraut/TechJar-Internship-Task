@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Nav bar  -->
+    <nav>
+      <h1>TechJar</h1>
+      <div class="rightNav">
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="login-signup">
+          <a href="#" class="login-txt">Login</a>
+          <button class="signup-btn">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Form -->
+    <div class="form-container">
+      <form id="multiStepForm">
+        <div class="step" data-step="1">
+          <h2>Personal Information</h2>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="Name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="Email" required />
+          <div class="error-message"></div>
+          <button class="next" type="button">Next</button>
+        </div>
+
+        <div class="step" data-step="2">
+          <h2>Additional Information</h2>
+          <label for="phone">Phone:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="[0-9]{10}"
+            required
+          />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="Password" required />
+          <div class="error-message"></div>
+          <button class="prev" type="button">Previous</button>
+          <button class="next" type="button">Next</button>
+        </div>
+
+        <div class="step" data-step="3">
+          <h2>Preferences</h2>
+          <span>
+            <label for="newsletter">Subscribe to Newsletter</label>
+            <input
+              class="checkbox-input"
+              type="checkbox"
+              id="newsletter"
+              name="Newsletter"
+              required
+            />
+          </span>
+          <div class="color-options">
+            <label>Preferred Color</label>
+            <div class="radio-btns">
+              <div class="radio-selector">
+                <input
+                  class="color-input"
+                  type="radio"
+                  id="color1"
+                  name="color"
+                  value="Red"
+                  required
+                />
+                <label for="color1">Red</label>
+              </div>
+              <div class="radio-selector">
+                <input
+                  class="color-input"
+                  type="radio"
+                  id="color2"
+                  name="color"
+                  value="Blue"
+                />
+                <label for="color2">Blue</label>
+              </div>
+            </div>
+          </div>
+
+          <textarea
+            id="comments"
+            name="Comments"
+            placeholder="Any comments..."
+            required
+          ></textarea>
+          <div class="error-message"></div>
+          <button class="prev" type="button">Previous</button>
+          <button class="next" type="button">Next</button>
+        </div>
+
+        <!-- Confirmation and Summary of Form Data -->
+        <div class="step" id="confirmation-step" data-step="4">
+          <h2>Confirmation</h2>
+          <div id="summary"></div>
+          <button class="prev" type="button">Previous</button>
+          <button class="submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
